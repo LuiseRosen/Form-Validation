@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<script>
+    function myFunction() {
+        console.log('Hi');
+    }
+
+</script>
+
+<body>
+
+    <form onsubmit="myFunction()" action=""> <!-- es folgen Bespiele für input typen - es gibt aber noch mehr -->
+        <input placeholder="text" pattern="[A-Za-z0-9]" minlength="2" type="text">
+        <!-- pattern="[A-Za-z0-9]" heißt: es dürfen nur Großbuchstaben von A-Z, Kleinbuchstaben von a-z und Zahlen von 0-9 eingegeben werden. Aufgepasst: da sind auch keine Sonderzeichen wie ß dabei -->
+        <input placeholder="number" type="number">
+        <input type="week">
+        <input type="month">
+        <input type="date">
+        <input placeholder="datetime" type="datetime">
+        <input type="datetime-local">
+        <input type="checkbox">
+        <input type="color">
+        <input type="button">
+        <input type="range">
+        <input type="time">
+        <input type="password">
+        <input type="hidden">
+        <input required placeholder="email" type="email">
+        <!-- required macht, dass das Feld ausgefüllt werden muss, sonst kommt eine Meldung-->
+
+        <button>Absenden</button>
+
+    </form>
+
+    <!-- ein <form> Element braucht immer das Atribut action. Dieses verweist auf die Seite, auf die nach dem
+Absenden weitergeleitet wird. Steht da nichts drin, wird die Seite neu geladen. 
+Möchte man auf gar keine Seite weiterleiten muss man hinter die function ; return false; schreiben
+Das kann man anhand der function myFunction() sehen: das 'hi' wird in der oberen <form> immer nur 
+ganz kurz an die Konsole geloggt, dann verschwindet es wieder. bei der <form> unten bleibt es an der Konsole.
+-->
+
+<br><br><br><br><br>
+    <form onsubmit="myFunction(); return false;">
+        <input placeholder="" type="text">
+        <button>Absenden</button>
+    </form>
+
+</body>
+
+</html>
